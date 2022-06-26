@@ -1,0 +1,8 @@
+th,td{
+    text-align: center;
+}
+tbody tr td:nth-child(2){
+    width: 40%;
+    word-wrap: break-word;
+    text-align: left;
+}

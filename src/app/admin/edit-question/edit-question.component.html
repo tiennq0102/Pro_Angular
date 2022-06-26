@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="col-12">
+        <h1 class="mt-4 mb-3">Edit Question</h1>
+        <!-- {{formHero | json}} -->
+        <form [formGroup]="questionForm" (ngSubmit)="saveEdit()" >
+            <div class="d-flex flex-row">
+                <div class="col-6 d-flex flex-column">
+                    <div class="col-10 mb-2">
+                        <div class="form-group">
+                            <label for="">Id</label>
+                            <input type="text" class="form-control" formControlName="id">
+                        </div>
+                    </div>
+                    <div class="col-10 mb-2">
+                        <div class="form-group">
+                            <label for="">Text</label>
+                            <input type="text" class="form-control" formControlName="Text">
+                        </div>
+                    </div>
+                    <div class="col-10 mb-2">
+                        <div class="form-group">
+                            <label for="">Marks</label>
+                            <input type="text" class="form-control" formControlName="Marks">
+                        </div>
+                    </div>
+                    <div class="col-10 mb-2">
+                        <div class="form-group">
+                            <label for="">AnswerId</label>
+                            <input type="text" class="form-control" formControlName="AnswerId">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 d-flex flex-column" [formGroup]="answerForm">
+                    <div class="col-5 mb-2">
+                        <div class="form-group">
+                            <label for="">Answer 1</label>
+                            <input type="hidden" class="form-control" formControlName="id0">
+                            <input type="text" class="form-control" formControlName="Text0">
+                        </div>
+                    </div>
+                    <div class="col-5 mb-2">
+                        <div class="form-group">
+                            <label for="">Answer 2</label>
+                            <input type="hidden" class="form-control" formControlName="id1">
+                            <input type="text" class="form-control" formControlName="Text1">
+                        </div>
+                    </div>
+                    <div class="col-5 mb-2">
+                        <div class="form-group">
+                            <label for="">Answer 3</label>
+                            <input type="hidden" class="form-control" formControlName="id2">
+                            <input type="text" class="form-control" formControlName="Text2">
+                        </div>
+                    </div>
+                    <div class="col-5 mb-2">
+                        <div class="form-group">
+                            <label for="">Answer 4</label>
+                            <input type="hidden" class="form-control" formControlName="id3">
+                            <input type="text" class="form-control" formControlName="Text3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="d-flex mt-3 justify-content-start">
+                <button type="submit" class="btn btn-success">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>

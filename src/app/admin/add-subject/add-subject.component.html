@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="col-12">
+        <h1 class="mt-4 mb-3">Add Subject</h1>
+        <form (ngSubmit)="addSubject()" [formGroup]="subjectForm">
+            <div class="col-12 d-flex flex-column">
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Logo</label>
+                        <input type="file"  class="form-control" (change)="chooseFile($event)">
+                    </div>
+                </div>
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Code</label>
+                        <input type="text" class="form-control" formControlName="Code">
+                    </div>
+                </div>
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" formControlName="Name">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex mt-3 justify-content-start">
+                <button type="submit" class="btn btn-success">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>

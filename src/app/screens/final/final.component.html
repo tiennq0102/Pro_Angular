@@ -1,0 +1,19 @@
+<div class="d-flex flex-row">
+    <div class="col-6">
+        <h1>Kết quả</h1>
+        <strong>Tên môn: </strong><span>{{subject_code}}</span><br>
+        <strong>Điểm: </strong><span>{{score}}</span><br>
+        <strong>Thời gian quiz: </strong><span>15 phút</span><br>
+        <strong>Thời gian làm: </strong><span>12 phút</span>
+    </div>
+    <div class="col-6 d-flex justify-content-end" *ngIf="score < 5; else elseBlock">
+        <h1 class="text-danger me-5">Fall</h1>
+    </div>
+    <ng-template #elseBlock>
+        <div class="col-6 d-flex justify-content-end">
+            <h1 class="text-success me-5">Pass</h1>
+        </div>
+    </ng-template>
+    
+</div>
+<a routerLink="/" class="btn btn-primary mt-4">Quay lại trang chủ</a>

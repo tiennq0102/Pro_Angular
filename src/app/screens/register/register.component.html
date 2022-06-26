@@ -1,0 +1,90 @@
+<div class="container-fluid">
+    <div class="col-6 offset-3">
+        <h3 class="text-center">Đăng ký</h3>
+        <!-- {{registerForm.value | json}} -->
+        <br>
+        <!-- trạng thái của form: {{registerForm.valid | json}} -->
+        <form [formGroup]="registerForm" (ngSubmit)="addStudent()">
+            <!-- Username -->
+            <div class="form-group">
+                <label for="">Username:</label><br>
+                <input type="text" formControlName="name" class="form-control" name="" id="">
+                <div *ngIf="registerForm.controls['name'].errors
+                    &&(
+                        registerForm.controls['name'].touched
+                        ||registerForm.controls['name'].dirty
+                    )">
+                    <div class="text-danger" *ngIf="registerForm.controls['name'].hasError('required')">Hãy nhập username</div>
+                </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="">Email:</label><br>
+                <input type="text" formControlName="email" class="form-control" name="" id="">
+                <div *ngIf="registerForm.controls['email'].errors
+                    &&(
+                        registerForm.controls['email'].touched
+                        ||registerForm.controls['email'].dirty
+                    )">
+                    <div class="text-danger" *ngIf="registerForm.controls['email'].hasError('required')">Hãy nhập email</div>
+                    <div class="text-danger" *ngIf="registerForm.controls['email'].hasError('email')">Không đúng định dạng email</div>
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <label for="">Password:</label><br>
+                <input type="password" formControlName="password" class="form-control" name="" id="">
+                <div *ngIf="registerForm.controls['password'].errors
+                    &&(
+                        registerForm.controls['password'].touched
+                        ||registerForm.controls['password'].dirty
+                    )">
+                    <div class="text-danger" *ngIf="registerForm.controls['password'].hasError('required')">Hãy nhập password</div>
+                    <div class="text-danger" *ngIf="registerForm.controls['password'].hasError('minlength')">Password tối da 6 kí tự</div>
+                </div>
+            </div>
+            <!-- Confirm password -->
+            <div class="form-group">
+                <label for="">Confirm Password:</label><br>
+                <input type="password" formControlName="confirmPassword" class="form-control" name="" id="">
+                <!-- {{registerForm.controls['confirmPassword'].errors | json}} -->
+                <div *ngIf="registerForm.controls['confirmPassword'].errors
+                    &&(
+                        registerForm.controls['confirmPassword'].touched
+                        ||registerForm.controls['confirmPassword'].dirty
+                    )">
+                    <div class="text-danger" *ngIf="registerForm.controls['confirmPassword'].hasError('required')">Hãy nhập confirm_password</div>
+                    <span class="text-danger" *ngIf="registerForm.controls['confirmPassword'].hasError('matchConfirmPassword')">Xác nhận mật khẩu chưa khớp</span>
+                </div>
+            </div>
+            <!-- Birth date -->
+            <div class="form-group">
+                <label for="">Birth date:</label><br>
+                <input type="date" formControlName="birth_date" class="form-control" name="" id="">
+                <div *ngIf="registerForm.controls['birth_date'].errors
+                    &&(
+                        registerForm.controls['birth_date'].touched
+                        ||registerForm.controls['birth_date'].dirty
+                    )">
+                    <div class="text-danger" *ngIf="registerForm.controls['birth_date'].hasError('required')">Hãy nhập birth_date</div>
+                </div>
+            </div>
+            <!-- Confirm password -->
+            <div class="form-group">
+                <label for="">Address:</label><br>
+                <input type="text" formControlName="address" class="form-control" name="" id="">
+                <div *ngIf="registerForm.controls['address'].errors
+                    &&(
+                        registerForm.controls['address'].touched
+                        ||registerForm.controls['address'].dirty
+                    )">
+                    <div class="text-danger" *ngIf="registerForm.controls['address'].hasError('required')">Hãy nhập address</div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-3">
+                <button [disabled]="registerForm.invalid" class="btn btn-primary">Đăng ký</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+*{box-sizing: border-box}
+main{
+    min-height: 410px;
+}
+p{
+    margin-bottom: 0;
+}
+.main-left{
+    width: 75%;
+    background-color: rgb(220, 220, 220);
+    border-radius: 5px;
+    padding: 20px;
+}
+.main-right{
+    width: 24%;
+    background-color: rgb(220, 220, 220);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.box-right{
+    width: 180px;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 5px;
+}
+.box-right>*{
+    font-size: 1.9vw;
+}
+.box-right strong{
+    font-size: 2vw;
+}
+
+footer{
+    height: 70px;
+    text-align: center;
+    color: white;
+}
+footer h3{
+    line-height: 70px;
+}

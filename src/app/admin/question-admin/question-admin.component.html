@@ -1,0 +1,25 @@
+<h1 class="mt-4 ms-4 mb-3">List Question</h1>
+<a [routerLink]="'/admin/add-question/' + subject_code" class="btn btn-primary">Thêm mới</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Text</th>
+            <th>Marks</th>
+            <th>AnswerId</th>  
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let q of questions">
+            <td>{{q.id}}</td>
+            <td>{{q.Text}}</td>
+            <td>{{q.Marks}}</td>
+            <td>{{q.AnswerId}}</td>
+            <td>
+                <a [routerLink]="'/admin/edit-question/' + q.id + '/' + subject_code" class="btn btn-primary">Sửa</a>&nbsp;
+                <button (click)="deleteQues(q.id)" class="btn btn-danger">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

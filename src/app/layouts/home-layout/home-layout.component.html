@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <header class="d-flex flex-row justify-content-around bg-light bg-gradient pt-4 pb-4 mb-2">
+        <div class="header1 col-6">
+            <a routerLink="/"><img src="./../../../assets/img/FPT_Polytechnic.png" width="35%" alt=""></a>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <!-- dùng href khi chuyển trang sẽ tải lại trang sẽ reload lại trang, k đúng với mong muốn khi dung Angular => chuyển thành dùng routerLink -->
+                    <a class="nav-link active" aria-current="page" routerLink="login" >Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="mon-hoc">Môn học</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="d-flex flex-row justify-content-between mb-2">
+        <div class="main-left">
+            <router-outlet>
+            </router-outlet>
+        </div>
+        <div class="main-right">
+
+            <div class="box-right bg-gradient bg-light mt-4 d-flex flex-column">
+              <div *ngIf="isLoggedIn==true; else elseBlock">
+                <strong>Xin chào</strong><p>{{loggedInUser.name}}</p>
+              </div>
+              <ng-template #elseBlock><p>Hello</p></ng-template>
+            </div>  
+            
+            <div class="box-right bg-gradient bg-warning mt-4">
+              <a routerLink="register" class="text-light text-decoration-none">Register</a>
+            </div>
+            <div class="box-right bg-gradient bg-danger mt-4">
+              <a href="" class="text-light text-decoration-none" (click)="Logout()">Logout</a>
+          </div>
+        </div>
+    </main>
+    
+    <footer class="bg-secondary">
+        <h3>Đây là footer</h3>
+    </footer>
+</div>

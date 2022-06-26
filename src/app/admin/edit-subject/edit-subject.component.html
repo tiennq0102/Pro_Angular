@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="col-12">
+        <h1 class="mt-4 mb-3">Edit Subject</h1>
+        <!-- {{formHero | json}} -->
+        <form [formGroup]="subjectForm" (ngSubmit)="saveEdit()">
+            <div class="col-12 d-flex flex-column">
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Id</label>
+                        <input type="text" class="form-control" formControlName="id" >
+                    </div>
+                </div>
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Logo &nbsp;</label>
+                        <img [src]="uploadFile" width="30%" alt="">
+                        <input type="file" class="form-control" (change)="chooseFile($event)">
+                    </div>
+                </div>
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Code</label>
+                        <input type="text" class="form-control" formControlName="Code">
+                    </div>
+                </div>
+                <div class="col-5 mb-2">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" formControlName="Name">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="d-flex mt-3 justify-content-start">
+                <button class="btn btn-success">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="d-flex flex-row align-item-center col-9">
+    <h2 class="mx-3 col-4">List môn học</h2>
+    <input type="text" (keyup)="search($event)" placeholder="Tìm kiếm môn học..." class="form-control mx-3" style="height: 40px;">
+</div>
+<div  class="d-flex flex-row justify-content-between flex-wrap">
+    <!-- {{subjects|json}} -->
+    <div class="card row my-3 mx-1" style="width: 14rem;" *ngFor="let sub of subjects">
+        <a [routerLink]="'/quiz/' + sub.Code"><!-- biến item.Code có dữ liệu đi kèm nên routerLink phải có []  -->
+            <img [src]="'/assets/img/logos/' + sub.Logo" class="card-img-top" width="50px" alt="...">
+        </a> 
+        <div class="card-body">
+            <a class="text-decoration-none " [routerLink]="'/quiz/' + sub.Code"><h5 class="card-title ">{{sub.Name}}</h5></a>
+        </div>
+    </div>
+</div>

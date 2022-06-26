@@ -1,0 +1,27 @@
+<!-- <fieldset *ngFor="let item of monhoc">
+    <legend>{{item.Name}}</legend>
+    <a [routerLink]="'quiz/' + item.Code">Làm quiz</a>
+</fieldset> -->
+<div class="d-flex flex-row justify-content-around">
+    <div class="box bg-gradient bg-success">
+        <a class="text-light text-decoration-none">Lịch sử</a>
+    </div>
+    <div class="box bg-gradient bg-info">
+        <a routerLink="mon-hoc" class="text-light text-decoration-none ">Môn học</a>
+    </div>
+    <div class="box bg-gradient bg-primary">
+        <a class="text-light text-decoration-none">Thông tin user</a>
+    </div>    
+</div>
+<br>
+<!-- <input type="text" (keyup)="search($event)" >
+<ul>
+    <li *ngFor="let st of students">{{st.email}}</li>
+</ul>
+ <div class="container">
+     <div class="row">
+         <div *ngFor="let sub of subjects" class="col-3">
+             <h2>{{sub.Name}}</h2>
+         </div>
+     </div>
+ </div> -->

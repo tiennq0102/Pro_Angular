@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="left col-2 bg-light">
+            <div class="img text-center">
+                <img src="../../../assets/img/FPT_Polytechnic.png" width="85%" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a routerLink="/admin" class="text-decoration-none">Home</a></li>
+                    <li><a routerLink="/admin/student" class="text-decoration-none">Student</a></li>
+                    <li><a routerLink="/admin/subject" class="text-decoration-none">Subject</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right col-10">
+            <div class="">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

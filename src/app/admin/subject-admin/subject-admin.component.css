@@ -1,0 +1,6 @@
+th,td{
+    text-align: center;
+}
+tr td:nth-child(4){
+    width: 30%;
+}

@@ -1,0 +1,4 @@
+<p>upload-form works!</p>
+<!-- {{uploadFile | json}} -->
+<img [src]="uploadFile" width="200px" alt="" *ngIf="uploadFile.length > 0">
+<input type="file" (change)="chooseFile($event)" id="">

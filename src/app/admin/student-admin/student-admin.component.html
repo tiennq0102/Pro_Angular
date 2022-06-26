@@ -1,0 +1,32 @@
+<h1 class=" ms-4 mb-3 col-3 mt-4">List Student</h1>
+<div class="d-flex flex-row col-9 mt-4">
+    <a routerLink="/admin/add-student" class="btn btn-primary" style="width:110px">Thêm mới</a> &nbsp;&nbsp;
+    <input type="text" (keyup)="search($event)" placeholder="Tìm kiếm sinh viên theo email..." class="form-control">
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Google Id</th>
+            <th>Email</th>
+            <th>Avatar</th>
+            <!-- <th>Marks</th> -->
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.googleId}}</td>
+            <td>{{s.email}}</td>
+            <td><img [src]="s.avatar" width="50%" alt=""></td>
+            <td>
+                <a [routerLink]="'/admin/edit-student/' + s.id" class="btn btn-primary">Sửa</a>&nbsp;
+                <button (click)="deleteStu(s.id)"  class="btn btn-danger">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

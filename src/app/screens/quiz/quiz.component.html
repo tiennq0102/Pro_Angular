@@ -1,0 +1,23 @@
+<h2>Danh sách câu hỏi môn {{subject_code}}</h2>
+<br>
+<div class="d-flex flex-row justify-content-between">
+    <div>
+        <div class="mb-2">
+            <div class="question" *ngFor="let q of questions">
+                
+            <h5>Câu hỏi</h5><p>{{q.Text}}</p>
+                <div class="answer d-flex flex-row flex-wrap">
+                    <div class="form-check" *ngFor="let a of q.Answers">
+                        <input class="form-check-input" (change)="choose(q.id, a.id)" [value]="a.id" type="radio" [name]="q.id" [id]="a.id">
+                        <label style=" word-wrap: break-word; width: 98%;" class="form-check-label" [for]="a.id">{{a.Text}}</label>
+                    </div>
+                </div>   
+            </div>    
+        </div>
+    </div>
+    <div class="time">
+        <h1 class="me-3">15:00</h1>
+    </div>
+</div>
+<!-- <a routerLink="/ket-qua" class="btn btn-success mt-3">Nộp bài</a> -->
+<a class="btn btn-success mt-3" (click)="submit()">Nộp bài</a>
